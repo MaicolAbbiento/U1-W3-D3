@@ -45,8 +45,9 @@ const changeColorWithRandom = function () {
 changeColorWithRandom()
 let randomColor
 const changeColorWithRandoms = function () {
+  let selettor = document.querySelector("#beCrazy")
   let elementToChange = document.querySelector("html")
-  elementToChange.onclick = function () {
+  selettor.onclick = function () {
     const red = Math.round(Math.random() * 255)
     const green = Math.round(Math.random() * 255)
     const blue = Math.round(Math.random() * 255)
@@ -57,12 +58,3 @@ const changeColorWithRandoms = function () {
 }
 let beCrazy = document.getElementById("beCrazy")
 beCrazy.addEventListener("click", changeColorWithRandoms)
-
-const NochangeColorWithRandom = function () {
-  let elementToChange = document.querySelector("html")
-  elementToChange.onclick = function () {
-    elementToChange.style.backgroundColor = randomColor
-  }
-}
-let no = document.getElementById("no")
-no.addEventListener("click", NochangeColorWithRandom)

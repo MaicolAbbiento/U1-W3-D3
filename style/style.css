@@ -11,6 +11,7 @@ body {
 .pOnClick {
   text-decoration: line-through;
 }
+
 form div {
   text-align: center;
 }
@@ -44,4 +45,15 @@ h1 {
   text-align: center;
   color: white;
   text-transform: uppercase;
+}
+.extraButton {
+  display: inline-block;
+  margin: 10px;
+}
+.button {
+  text-align: center;
+  margin: 20px;
+}
+input {
+  color: white;
 }

@@ -10,6 +10,7 @@ document.addEventListener("submit", function (e) {
   const elementAdd = document.getElementById("taskContainer")
   elementAdd.appendChild(newTasK)
   const deleteButton = document.querySelectorAll(".buttonT")
+
   deleteButton.forEach((button) => {
     button.addEventListener("click", function (e) {
       let buttonClick = e.target
@@ -17,14 +18,13 @@ document.addEventListener("submit", function (e) {
       buttonR.remove()
     })
   })
-  const pStyle = document.querySelectorAll(".taskP ")
-  pStyle.forEach((div) => {
-    div.addEventListener("click", function (e) {
-      let pClick = e.target
-      pClick.classList.add("pOnClick")
-      console.log(pClick.classList[1])
+
+  let allTasks = document.querySelectorAll(".taskP")
+  for (let i = 0; i < allTasks.length; i++) {
+    allTasks[i].addEventListener("click", function () {
+      this.classList.toggle("pOnClick")
     })
-  })
+  }
   taskArea.value = ""
 })
 
@@ -43,17 +43,15 @@ const changeColorWithRandom = function () {
 }
 
 changeColorWithRandom()
-
+let randomColor
 const changeColorWithRandoms = function () {
   let elementToChange = document.querySelector("html")
   elementToChange.onclick = function () {
     const red = Math.round(Math.random() * 255)
     const green = Math.round(Math.random() * 255)
     const blue = Math.round(Math.random() * 255)
-
-    const randomColor = `rgb(${red},${green},${blue})`
+    randomColor = `rgb(${red},${green},${blue})`
     elementToChange.style.userSelect = "none"
-    elementToChange.style.cursor = "pointer"
     elementToChange.style.backgroundColor = randomColor
   }
 }
@@ -63,7 +61,7 @@ beCrazy.addEventListener("click", changeColorWithRandoms)
 const NochangeColorWithRandom = function () {
   let elementToChange = document.querySelector("html")
   elementToChange.onclick = function () {
-    elementToChange.style.backgroundColor = `rgb(39, 36, 36)`
+    elementToChange.style.backgroundColor = randomColor
   }
 }
 let no = document.getElementById("no")
